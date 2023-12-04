@@ -1,0 +1,5 @@
+/Users/kchada/Downloads/study/microservicesdockerk8s/CloudGateway/src/main/java/com/learning/CloudGateway/model/AuthenticationResponse.java
+/Users/kchada/Downloads/study/microservicesdockerk8s/CloudGateway/src/main/java/com/learning/CloudGateway/security/OktaOAuth2WebSecurity.java
+/Users/kchada/Downloads/study/microservicesdockerk8s/CloudGateway/src/main/java/com/learning/CloudGateway/controller/FallBackController.java
+/Users/kchada/Downloads/study/microservicesdockerk8s/CloudGateway/src/main/java/com/learning/CloudGateway/CloudGatewayApplication.java
+/Users/kchada/Downloads/study/microservicesdockerk8s/CloudGateway/src/main/java/com/learning/CloudGateway/controller/AuthenticationController.java

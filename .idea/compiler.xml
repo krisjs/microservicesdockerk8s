@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ConfigServer" />
+        <module name="OrderService" />
+        <module name="eureka-server" />
+        <module name="ProductService" />
+        <module name="PaymentService" />
+        <module name="CloudGateway" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CloudGateway" options="" />
+      <module name="ConfigServer" options="" />
+      <module name="OrderService" options="" />
+      <module name="PaymentService" options="" />
+      <module name="ProductService" options="" />
+      <module name="eureka-server" options="" />
+      <module name="microservicesdockerk8s" options="" />
+    </option>
+  </component>
+</project>
