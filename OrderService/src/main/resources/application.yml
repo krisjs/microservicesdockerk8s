@@ -6,6 +6,22 @@ spring:
     name: ORDER-SERVICE
   config:
     import: configserver:http://localhost:9296
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-18359154.okta.com/oauth2/default
+      client:
+        registration:
+          internal-client:
+            provider: okta
+            authorization-grant-type: client_credentials
+            scope: internal
+            client-id: 0oadm5qnkbDYQo4fi5d7
+            client-secret: w9oKAvIqJvnLzo02ew1HJ43J1Pne3EpBXFzlkk-NAF_79n2obBG-rfUZBoufoe0W
+        provider:
+          okta:
+            issuer-uri: https://dev-18359154.okta.com/oauth2/default
   datasource:
     url: jdbc:postgresql://localhost:5432/orderdb
     username: postgres
@@ -32,6 +48,7 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 3
         sliding-window-size: 10
         sliding-window-type: COUNT_BASED
+
 #eureka:
 #  instance:
 #    prefer-ip-address: true

@@ -1,21 +1,32 @@
 package com.learning.CloudGateway.security;
 
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.web.reactive.config.EnableWebFlux;
 
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-public class OktaOAuth2WebSecurity extends WebSecurityConfigurerAdapter {
-        protected void configure(final HttpSecurity http) throws Exception {
-            http.antMatcher("/**")
-                    .authorizeRequests()
-                    .antMatchers("/").permitAll()
-                    .anyRequest().authenticated()
-                    .and().oauth2Login();  // <-- THIS WAS CHANGED
-        }
+@EnableWebFluxSecurity
+public class OktaOAuth2WebSecurity {
+
+    @Bean
+    public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http){
+        http
+                .authorizeExchange()
+                .anyExchange().authenticated()
+                .and()
+                .oauth2Login()
+                .and()
+                .oauth2ResourceServer()
+                .jwt();
+
+        return http.build();
+
     }
 
 
 
+}

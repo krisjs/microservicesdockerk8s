@@ -1,17 +1,18 @@
 server:
   port: 9090
-  ssl:
-    enabled: true
-    key-store: "/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/lib/security/cacerts"
-    key-store-password: "password"
-    key-store-type: "jks"
-    key-alias: "okta"
+
 
 spring:
   application:
     name: API-GATEWAY
   config:
     import: configserver:http://localhost:9296
+  ssl:
+    enabled: true
+    key-store: "/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/lib/security/cacerts"
+    key-store-password: ""
+    key-store-type: "jks"
+    key-alias: "okta3"
   cloud:
     gateway:
       routes:
